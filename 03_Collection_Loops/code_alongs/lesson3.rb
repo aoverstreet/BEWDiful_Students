@@ -52,6 +52,35 @@ while count > 0
 	count -=1
 end
 
+i = 1
+while i <= 50 do
+print "#{i}"
+i += 1
+end
+
+#until
+i = 1
+until i >=51
+print i
+i += 1
+end
+
+#for
+i = 1
+for i in 1..50
+print"#{i}"
+end
+
+#loop
+counter = 1
+loop do
+counter += 1
+print "Ruby!"
+
+break if counter > 30
+end
+
+
 #do
 count = 99
 loop do
