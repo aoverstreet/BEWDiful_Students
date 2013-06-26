@@ -1,0 +1,36 @@
+feed_url = "http://www.whitehouse.gov/facts/json/progress/economy"
+
+response = RestClient.get(feed_url)
+
+parsed_response = JSON.load(response)
+
+stories = parsed_response
+
+stories.first['body']
+
+stories.size
+
+stories.each  do |story|
+	puts "#{story["url_title"]}: #{story["url"]}"
+end
+
+
+
+type = "whatsnext""
+category = "all"
+
+
+
+
+def first_story (type ="all", category ="all")
+	feed_url = "http://www.whitehouse.gov/facts/json/#{type}/#{category}"
+
+	response = RestClient.get(feed_url)
+	
+	parsed_response = JSON.load(response)
+	
+	stories = parsed_response
+	
+	puts stories.first["url_title"]
+
+end
