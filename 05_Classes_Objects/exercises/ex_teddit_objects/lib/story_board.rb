@@ -1,10 +1,5 @@
 class StoryBoard
 	@@stories = []
-	
-	
-	def self.add_story(story)
-		@@stories << story
-	end
 
 	def self.stories
 		@@stories.map do |story| 
@@ -12,6 +7,8 @@ class StoryBoard
 		end
 	end
 	
-	
+	def self.add_story(story)
+		@@stories.push(story)
+	end
 
 end
