@@ -1,4 +1,5 @@
 class Story
+<<<<<<< HEAD
 =begin
 	attr_accessor :name , :category
 	
@@ -22,4 +23,12 @@ class Story
 	
 	
 
+=======
+  attr_accessor :title, :category, :upvotes
+
+  def initialize(title, category)
+    @title = title
+    @category = category
+  end
+>>>>>>> 476ab9081e5945aaff03f37eaea09e2827713b08
 end

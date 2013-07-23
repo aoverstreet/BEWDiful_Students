@@ -13,4 +13,5 @@ rake db:migrate
 #starts server
 rails s
 
-Url.new
+#brings in your seed
+rake db:seed
