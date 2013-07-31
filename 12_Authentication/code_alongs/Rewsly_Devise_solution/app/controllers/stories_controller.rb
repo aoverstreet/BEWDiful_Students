@@ -1,4 +1,5 @@
 class StoriesController < ApplicationController
+  
   before_action :authenticate_user!, only: [:new, :create]
   def index
     @stories = Story.search_for params[:q]
@@ -14,12 +15,16 @@ class StoriesController < ApplicationController
 
   def create
     safe_story_params = params.require(:story).permit(:title, :link, :category)
-    @story = Story.new safe_story_params
+    #@story = Story.new safe_story_params
+    
+   @story = current.user.stories.build safe_story_params
+    
     @story.upvotes = 1
     if @story.save
-      redirect_to @story
+		redirect_to @story
     else
       render :new
     end
   end
+  
 end

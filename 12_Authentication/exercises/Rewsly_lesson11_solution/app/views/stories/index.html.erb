@@ -1,4 +1,16 @@
 <h1>Welcome to Rewsly</h1>
+
+<p>
+	<% if user_signed_in? %>
+		<%= link_to 'logout',  destroy_user_session_path, :method =>'DELETE' %>
+		
+	<% else %>	
+		<%= link_to 'login',  new_user_session_path %>
+		
+	<% end %>
+</p>
+
+
 <%= render 'search' %>
 <%= link_to "Add a new story", new_story_path %>
 <section id="stories">
