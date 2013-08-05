@@ -15,11 +15,17 @@ class StoriesController < ApplicationController
 
   def create
     safe_story_params = params.require(:story).permit(:title, :link, :category)
+<<<<<<< HEAD
     #@story = Story.new safe_story_params
     
    @story = current.user.stories.build safe_story_params
     
+=======
+
+    @story = current_user.stories.build safe_story_params
+>>>>>>> d8788ac1a603fa4ed18d5b3fd46899d09fd4c515
     @story.upvotes = 1
+
     if @story.save
 		redirect_to @story
     else

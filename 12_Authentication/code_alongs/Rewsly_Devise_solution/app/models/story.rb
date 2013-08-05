@@ -8,6 +8,10 @@ class Story < ActiveRecord::Base
   
   has_many :commenters, :through => :comments, :source => :user
 
+  belongs_to :user
+  has_many :comments
+  has_many :commenters, through: :comments, source: :user
+
   def self.search_for(query)
     where('title LIKE :query OR category LIKE :query', query: "%#{query}%")
   end
