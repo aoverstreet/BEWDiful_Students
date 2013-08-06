@@ -2,6 +2,9 @@ class StoriesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
   def index
     @stories = Story.all
+    
+    #display current user
+    #@stories = current_user.stories
   end
 
   def show
