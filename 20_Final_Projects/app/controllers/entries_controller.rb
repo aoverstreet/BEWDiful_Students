@@ -26,7 +26,7 @@ class EntriesController < ApplicationController
 		
 		#try and save
 		if @entry.save
-			#Mailer.send_new_entry(@entry, current_user).deliver
+			Mailer.send_new_entry(@entry, current_user).deliver
 			redirect_to @entry
 		else
 			render :new 

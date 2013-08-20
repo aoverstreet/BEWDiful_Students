@@ -1,2 +1,29 @@
-<%= @entry.name_item %> 
-<%= @entry.description_item %> 
+----------------------------------------------------------------
+
+Door-to-Door Donations!
+
+----------------------------------------------------------------
+
+Thank you <% if current_user.name? %>
+						<%= current_user.name  %>
+					<% else %>
+						<%=  current_user.email  %>
+					<% end %>, for your donation!
+
+----------------------------------------------------------------
+
+<%= @entry.name_item %>
+<%= @entry.description_item %>
+
+Pickup information
+<%= @entry.pickup_date %>
+<%= @entry.pickup_time %>
+<%= @entry.street1 %>, <%= @entry.street2 %>
+<%= @entry.city %>, <%= @entry.state %> | <%= @entry.zipcode %>
+<%= @entry.phone %>
+
+----------------------------------------------------------------
+
+(c) 2013 - All Rights Reserved.
+
+----------------------------------------------------------------

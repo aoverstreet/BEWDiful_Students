@@ -38,11 +38,13 @@ $(function()  {
 	};
 
 	//my photo	
-	$('#adam').hover(function() {
-		  show_bubble();
-		  bubble_message.html('hi!');
-		}, function() {
-		   hide_bubble();
+	$('#adam').on({
+		mouseenter: function(){
+			show_bubble();
+		},
+		mouseleave: function(){
+			hide_bubble();
+		}
 	});
 	
 	
