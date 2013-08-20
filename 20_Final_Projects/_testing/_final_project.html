@@ -1,0 +1,77 @@
+For my final project, I wanted to build a simple CMS 
+that would allow a person to Donate unused items. 
+
+The CMS would include:
+1) Create new user:
+Name 
+Password
+
+2) Display items that you want to donate:
+Name of item
+Description of item
+Display images of item(s)
+Category: Electronic, Clothes, Furniture, Automobile or Misc.
+Contact Information
+Arrange for pickup -- Range (Day, Month, Year)
+
+3) Email Confirmation for pick up:
+Date -- Day, Month, Year 
+Time
+Confirmation Number
+
+ - - - - 
+ 
+User Stories
+
+
+Login Page
+As a new user, you would create a profile, which would include email and password.
+or have the ability to login via Devise (Facebook/omniauth).
+
+Home page
+After a successful login, Home page would appear. 
+Welcome {user name} would appear along with 'Would you like to make new donation?'
+and a list of past donations (which would include Name of item and Date).
+
+
+Would you like to make new donation? (add button)
+If the user clicks add button, user would be taken to a new donation page and 
+a form would needed to filled out:
+
+Name of item
+Description of item
+upload images of item(s)
+Category: Electronic, Clothes, Furniture, Automobile or Misc.
+Contact Information 
+Arrange for pickup -- Range (Day, Month, Year)
+
+If everything was successful (no error messages), redirect back to home page, with new 
+item on top and edit button beside it.  The user will recieve an email with a confirmation number 
+and soon after a follow up email with Date and time for pickup.
+
+
+Past Donations 
+If a user clicks on a past donation, it would redirect to an individual page.
+Where it would list: 
+Name of item
+Description of item
+Display images of item(s)
+Category: Electronic, Clothes, Furniture, Automobile or Misc.
+Date item was pickup 
+Confirmation number
+
+Click return to home page.
+
+
+Edit Donation
+If needed the user could edit donation.  The user would click edit and would be redirected to 
+individual page. 
+
+
+
+
+
+
+
+
+

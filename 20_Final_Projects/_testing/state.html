@@ -1,0 +1,83 @@
+<!doctype html>
+ 
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>jQuery UI Autocomplete - Multiple values</title>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+ 
+  <script>
+  $(function() {
+    var availableTags = [
+		"Alabama", 
+		"Alaska", 
+		"Arizona", 
+		"Arkansas", 
+		"California", 
+		"Colorado", 
+		"Connecticut", 
+		"D.C.", 
+		"Delaware", 
+		"Florida", 
+		"Georgia",
+		"Hawaii",
+		"Idaho",
+		"Illinois",
+		"Indiana",
+		"Iowa",
+		"Kansas", 
+		"Kentucky", 
+		"Louisiana",
+		"Maine",
+		"Maryland", 
+		"Massachusetts", 
+		"Michigan", 
+		"Minnesota", 
+		"Mississippi", 
+		"Missouri", 
+		"Montana", 
+		"Nebraska", 
+		"Nevada", 
+		"New Hampshire", 
+		"New Mexico", 
+		"New York", 
+		"New Jersey", 
+		"North Carolina", 
+		"North Dakota", 
+		"Ohio", 
+		"Oklahoma", 
+		"Oregon", 
+		"Pennsylvania", 
+		"Rhode Island", 
+		"South Carolina", 
+		"South Dakota", 
+		"Tennessee",
+		"Texas", 
+		"Utah", 
+		"Vermont", 
+		"Virginia", 
+		"Washington", 
+		"West Virginia", 
+		"Wisconsin", 
+		"Wyoming" 
+    ];
+    
+  $( "#state" ).autocomplete({
+      source: availableTags
+    });
+  
+  });
+  </script>
+</head>
+<body>
+ 
+<div class="ui-widget">
+
+  <input id="state" size="50" />
+</div>
+ 
+ 
+</body>
+</html>

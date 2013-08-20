@@ -1,0 +1,6 @@
+<ul>
+<%= #simple_form_for @entry do |f| %>
+  <li><%= f.input :name_item, label: 'Name of Item:', input_html: { class:'form_input' } %></li>
+  <%= f.button :submit, "Submit"%>
+<% end %>
+</ul>

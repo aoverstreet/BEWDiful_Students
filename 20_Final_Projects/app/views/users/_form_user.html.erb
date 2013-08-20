@@ -1,0 +1,94 @@
+<% if @user.errors.any? %>
+
+	<div class="modal fade" id ="form_errors">
+	  <div class="modal-dialog" >
+		<div class="modal-content" >
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="icon-remove-sign"></i></button>
+			<h4 class="modal-title title_error">Houston, we have a problem!</h4>
+		  </div>
+		  <div class="modal-body">
+			<% @user.errors.full_messages.each do |msg| %>
+			  <p class="modal-title text-danger"><%= msg %></p>
+			<% end %>
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		  </div>
+		</div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+<% end %>
+
+<div class="col-md-6">
+	<div class="row">
+
+			<%= form_for @user, :html => {:multipart => true} do |f|%>
+		
+			
+			<div class="row">
+				<div class="form-group col-lg-10">
+					<span><%= f.label :name, "Name:" %></span> 
+					<%= f.text_field :name, class: "form-control" %>
+				</div>
+			</div> <!-- closed .row -->	
+		
+			<div class="row">
+				<div class="form-group col-lg-10">
+					<span><%= f.label :name, "Street1:" %></span> 
+					<%= f.text_field :street1, class: "form-control" %>
+				</div>
+			</div> <!-- closed .row -->	
+			
+			<div class="row">
+				<div class="form-group col-lg-10">
+					<span><%= f.label :name, "Street2:" %></span> 
+					<%= f.text_field :street2, class: "form-control" %>
+				</div>
+			</div> <!-- closed .row -->	
+			
+			<div class="row">
+				<div class="form-group col-lg-10">
+					<span><%= f.label :name, "City:" %></span> 
+					<%= f.text_field :city, class: "form-control" %>
+				</div>
+			</div> <!-- closed .row -->	
+			
+			<div class="row">
+				<div class="form-group col-lg-10">
+					<span><%= f.label :name, "State:" %></span> 
+					<%= f.text_field :state, class: "form-control" %>
+				</div>
+			</div> <!-- closed .row -->	
+			
+			<div class="row">
+				<div class="form-group col-lg-10">
+					<span><%= f.label :name, "Zip code:" %></span> 
+					<%= f.text_field :zipcode, class: "form-control" %>
+				</div>
+			</div> <!-- closed .row -->	
+			
+			<div class="row">
+				<div class="form-group col-lg-10">
+					<span><%= f.label :name, "Phone:" %></span> 
+					<%= f.text_field :phone, class: "form-control" %>
+				</div>
+			</div> <!-- closed .row -->	
+			
+			<div class="row">
+				<div class="form-group col-lg-10">			
+					<button class="btn btn-default btn-lg btn-success"><i class='icon-ok-circle'></i> <%= f.submit "Submit", class: "btn btn-default btn-success" %></button>
+				</div>
+			</div> <!-- closed .row -->	 	
+				
+			<% end %>
+			
+	</div>
+</div> <!-- closed .row -->				
+
+
+
+
+
+

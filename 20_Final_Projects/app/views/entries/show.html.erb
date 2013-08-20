@@ -1,0 +1,106 @@
+<div class="row">
+	<div class="col-lg-10">
+		<p class = "text-primary text-right">
+			<%= link_to "<button class='btn btn-default btn-lg btn-info'><i class='icon-home'></i> Home</button>".html_safe, root_path, class: "text-primary" %>
+			<%= link_to "<button class='btn btn-default btn-lg btn-warning'><i class='icon-user'></i> Profile</button>".html_safe, user_path(current_user.id), class: "text-warning" %>
+		</p>
+	</div>
+</div> <!-- closed .row --> 
+
+<div class="row">
+	<div class="col-lg-10">
+		<h3 class="text-muted">Thank you for your donation!</h3>
+		<br>
+		<%= image_tag @entry.images.url, alt: "donation", title: "donation" %>
+	</div>
+</div> <!-- closed .row -->	
+
+
+<div class="row">
+	<div class="col-lg-10">
+		<h4><%= @entry.name_item %></h4>
+	</div>
+</div> <!-- closed .row -->	
+
+<div class="row">
+	<div class="col-lg-10">
+		<%= @entry.description_item %>
+	</div>
+</div> <!-- closed .row -->
+
+
+<div class="row">
+	<div class="col-lg-10">
+		<%= @entry.category %>
+	</div>
+</div><!-- closed .row -->
+
+
+<div class="row">
+	<div class="col-lg-10">
+		<br>
+		<h4 class="text-info"><i class="icon-map-marker"></i> Pickup information</h4>
+	</div>
+</div> <!-- closed .row -->
+
+
+<div class="row">
+	<div class="col-lg-10">
+		<i class="icon-calendar"></i> <%= @entry.pickup_date %>
+	</div>
+</div> <!-- closed .row -->	
+
+<div class="row">
+	<div class="col-lg-10">
+		<i class="icon-time"></i> <%= @entry.pickup_time %>
+	</div>
+</div> <!-- closed .row -->	
+
+
+<div class="row">
+	<div class="col-lg-10">
+			<%= @entry.street1 %>
+		</div>
+</div> <!-- closed .row -->	
+
+<div class="row">
+	<div class="col-lg-10">
+			<%= @entry.street2 %>
+		</div>
+</div> <!-- closed .row -->	
+
+<div class="row">
+	<div class="col-lg-10">
+			<%= @entry.city %>, <%= @entry.state %> | <%= @entry.zipcode %>
+		</div>
+</div> <!-- closed .row -->	
+
+<div class="row">
+	<div class="col-lg-10">
+		<i class="icon-phone"></i> <%= @entry.phone %>
+	</div>
+</div> <!-- closed .row -->	
+
+
+	
+	
+	
+<div class="row">
+	<div class="col-lg-10">
+		<br>
+		<%= link_to "<button class='btn btn-default btn-lg btn-success'><i class='icon-edit'></i> Edit your donation</button>".html_safe, edit_entry_path(@entry), class: "text-success" %>
+		<%= link_to "<button class='btn btn-default btn-lg btn-danger'><i class='icon-thumbs-down'></i> Cancel your donation</button>".html_safe, @entry, method: :delete, confirm: "Are you sure you want to cancel your donation?", class: "text-danger" %>
+	</div>
+</div> <!-- closed .row -->	
+
+<!-- 
+		<ul>
+			<li><%=link_to 'Edit', edit_entry_path(@entry) %></li>
+			<li><%= link_to @entry, method: :delete, confirm: "Are you sure ?" do  %>
+						<i class> test</i>
+					<%end%>
+			</li>
+		</ul> -->
+		
+	</div>
+</div> <!-- closed .row -->

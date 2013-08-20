@@ -1,0 +1,72 @@
+<!-- 
+<ul>
+<% @entry.errors.full_messages.each do|msg|%>
+	<li><%= msg %></li>
+<% end %>
+</ul>
+ -->
+
+	
+	<%= form_for @entry, :html => {:multipart => true} do |f|%>
+	
+	<div class="row">
+		<div class="form-group col-lg-10">
+			<label for ="name_item"><%= f.label :name_item%></label> 
+			<%= f.text_field :name_item , :class => "form-control" , :id => "name_item"  %>
+		</div>
+	</div>	
+	
+	<div class="row">
+		<div class="form-group col-lg-10">
+			<label for ="description_item"><%= f.label :description_item%></label> 
+			<%= f.text_field :description_item , :class => "form-control" , :id => "description_item"  %>
+		</div>
+	</div>
+
+		
+		<!-- 
+	<li><span><%= f.label :category%></span>
+			<ul>
+				<li><%= radio_button_tag(:category, "electronics") %> <%= label_tag(:category_electronics, "Electronics") %></li>
+				<li><%= radio_button_tag(:category, "clothes") %> <%= label_tag(:category_clothes, "Clothes") %></li>
+				<li><%= radio_button_tag(:category, "furniture") %> <%= label_tag(:category_furniture, "Furniture") %></li>
+				<li><%= radio_button_tag(:category, "automobiles") %> <%= label_tag(:category_automobiles, "Automobiles") %></li>
+				<li><%= radio_button_tag(:category, "misc") %> <%= label_tag(:category_misc, "Misc") %></li>
+			</ul>
+		</li>
+	 -->
+	 
+		<div class="row">
+			<div class="form-group col-lg-10">
+				<label for ="images"><%= f.label :images%></label> 
+				<%= f.file_field :images, :id => "images" %>
+			</div>
+		</div>
+
+
+		<div class="row">
+			<div class="form-group col-lg-10">
+				<label for ="pickup_date"><%= f.label :pickup_date%></label> 
+				<%= f.text_field :pickup_date , :class => "form-control" , :id => "pickup_date"  %>
+			</div>
+		</div>
+
+		
+		<div class="row">
+			<div class="form-group col-lg-10">
+			<button class="btn btn-default"><%= f.submit %></button>
+			
+			
+			</div>
+		</div>
+
+
+		
+	<% end %>
+	
+	
+
+
+
+
+

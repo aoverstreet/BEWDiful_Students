@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name_item: MyString
+  description_item: MyText
+  images: MyString
+  category: MyString
+  pickup_date: 2013-08-06
+
+two:
+  name_item: MyString
+  description_item: MyText
+  images: MyString
+  category: MyString
+  pickup_date: 2013-08-06

@@ -1,0 +1,147 @@
+<% if @entry.errors.any? %>
+
+	<div class="modal fade" id ="form_errors">
+	  <div class="modal-dialog" >
+		<div class="modal-content" >
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="icon-remove-sign"></i></button>
+			<h4 class="modal-title title_error">Houston, we have a problem!</h4>
+		  </div>
+		  <div class="modal-body">
+			<% @entry.errors.full_messages.each do |msg| %>
+			  <p class="modal-title text-danger"><%= msg %></p>
+			<% end %>
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		  </div>
+		</div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+<% end %>
+
+<div class="col-md-6">
+	<div class="row">
+
+		<%= form_for @entry, :html => {:multipart => true} do |f|%>
+		
+			<div class="row">
+				<div class="form-group col-lg-10">
+					<span><%= f.label :name, "Name of Item" %></span> 
+					<%= f.text_field :name_item, class: "form-control" %>
+				</div>
+			</div> <!-- closed .row -->
+		
+		
+			<div class="row">
+				<div class="form-group col-lg-10">	
+					<span><%=  f.label :name, "Description of Item" %></span> 
+					<%= f.text_area :description_item, class: "form-control" %>
+				</div>
+			</div> <!-- closed .row -->	
+		
+			<div class="row">
+				<div class="form-group col-lg-10">		
+					<span><%= f.label :name, "Categories" %></span> 
+					<br>
+					<%= f.select( :category, 
+						options_for_select([
+							'Please select a category', 'Electronics', 'Clothes', 'Furniture', 'Automobiles', 'Misc'
+						 ]) ) %>
+				</div>
+			</div><!-- closed .row -->	 	  
+		  
+		
+			<div class="row">
+				<div class="form-group col-lg-10">	
+					<span><%= f.label :name, "Add an image" %></span> 
+					<%= f.file_field :images%>
+				</div>
+			</div> <!-- closed .row -->	 	
+			
+			<div class="row">
+				<div class="form-group col-lg-10">
+					<br>
+					<h4 class="text-info"><i class="icon-map-marker"></i> Pickup information</h4>
+					
+					<span><i class="icon-calendar"></i> <%= f.label :name, "Pickup date" %></span> 
+					<%= f.text_field :pickup_date, class: "form-control", id: "pickup_date" %>
+				</div>
+			</div> <!-- closed .row -->
+			
+			<div class="row">
+				<div class="form-group col-lg-10">
+					<span><i class="icon-time"></i> <%= f.label :name, "Pickup time" %></span> 
+					<br>
+					<%= f.select( :pickup_time, 
+						options_for_select([
+							'Please select a time', '8am - 12pm (Morning)', '12pm - 4pm (Afternoon)', '4pm - 8pm (Evening)'
+						 ]) ) %>
+					
+				</div>
+			</div> <!-- closed .row -->
+		
+		
+			<div class="row">
+				<div class="form-group col-lg-10">
+					<span><%= f.label :name, "Street1:" %></span> 
+					<%= f.text_field :street1, class: "form-control" %>
+				</div>
+			</div> <!-- closed .row -->
+			
+			<div class="row">
+				<div class="form-group col-lg-10">
+					<span><%= f.label :name, "Street2:" %></span> 
+					<%= f.text_field :street2, class: "form-control" %>
+				</div>
+			</div> <!-- closed .row -->	
+			
+			<div class="row">
+				<div class="form-group col-lg-10">
+					<span><%= f.label :name, "City:" %></span> 
+					<%= f.text_field :city, class: "form-control" %>
+				</div>
+			</div> <!-- closed .row -->	
+			
+			<div class="row">
+				<div class="form-group col-lg-10">
+					<span><%= f.label :name, "State:" %></span> 
+					<%= f.text_field :state, class: "form-control", id: "state" %>
+				</div>
+			</div> <!-- closed .row -->	
+			
+			<div class="row">
+				<div class="form-group col-lg-10">
+					<span><%= f.label :name, "Zip code:" %></span> 
+					<%= f.text_field :zipcode, class: "form-control" %>
+				</div>
+			</div> <!-- closed .row -->	
+			
+			<div class="row">
+				<div class="form-group col-lg-10">
+					<span><%= f.label :name, "Phone:" %></span> 
+					<%= f.text_field :phone, class: "form-control" %>
+				</div>
+			</div> <!-- closed .row -->		
+			
+			
+			
+			<div class="row">
+				<div class="form-group col-lg-10">			
+					<button class="btn btn-default btn-lg btn-success"><i class='icon-ok-circle'></i> <%= f.submit "Submit", class: "btn btn-default btn-success" %></button>
+				</div>
+			</div> <!-- closed .row -->	 	
+			
+		<% end %>
+
+	</div>
+</div> <!-- closed .row -->	
+
+
+
+
+
+
+
+

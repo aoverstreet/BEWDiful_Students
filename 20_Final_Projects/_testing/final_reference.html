@@ -1,0 +1,43 @@
+<ul>
+	<%@entries.each do |entry| %>
+		<li><%=link_to entry.name_item, entry_path(entry) %></li>
+	<% end %>
+<ul>
+
+ 
+<!-- 
+ 	<section id="stories">
+		<ul>
+			<%= render @entries %>
+		</ul>
+	</section>
+ -->
+
+
+
+
+<%=@movie.title%>
+<%=@movie.year_released%>
+<%=@movie.description%>
+<%=@movie.ratings%>
+
+
+
+<!--  <%=link_to @movie.title, @movie%> -->
+
+
+
+<!-- email -->
+<p><%= link_to 'email confirmation', email_response_path %> </p>
+
+
+
+	<!--  search
+	<p>
+	<%= form_tag 'entries/', method: "GET" do %>
+		<%= label_tag :query, "Search:" %> 
+		<%= text_field_tag :query, params[:query] %>
+		<%= submit_tag "Search" %>
+	<% end %>
+	</p>
+	-->

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Door-to-Door Donations</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  
+  <%= favicon_link_tag 'favicon.ico' %>
+
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="container" id="main_container">
+
+	<div class="row">
+		<% if user_signed_in? %>
+		<div class="col-lg-10">
+			<p class="notice alert">
+				<%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+				<%= notice %>
+				<%= alert %>
+			</p>  
+		</div>
+		
+		<% else %>
+		
+		<div class="col-lg-10">
+			<p class="notice alert">
+				<%= link_to "Sign up", new_user_registration_path %> | <%= link_to "Sign in", new_user_session_path %>
+				<%= notice %>
+				<%= alert %>
+			</p>
+		</div>
+		
+		<% end %>
+	</div> <!-- closed .row -->
+
+	<%= yield %>
+	
+</div> <!-- closed .container -->
+
+<br>
+
+<div class="container">	
+
+	<div class="row">
+		<div class="col-lg-10 well well-sm text-right">
+			<small>
+				<i id="bubble_message_bg" class="icon-comment"></i><span id="bubble_message"></span>
+				<a class="text-info" id="adam" href="http://adamoverstreet.com" target="_blank"><%= image_tag("me.png", size: "16x16", alt: "adam overstreet") %> http://adamoverstreet.com</a> | &copy; Copyright <span id="year"></span> - All Rights Reserved.
+			</small>
+		</div>	
+	</div>
+		
+</div> <!-- closed .container -->		
+		
+
+</body>
+</html>
