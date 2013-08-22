@@ -1,0 +1,9 @@
+<% if current_user.name? %>
+	<%= current_user.name  %>
+<% else %>
+	<%=  current_user.email  %>
+<% end %>
+
+
+<%= image_tag "assets/spacer.gif"  width: '#', height: '#', border: "0", style: "display: block; border: 0;"%>
+

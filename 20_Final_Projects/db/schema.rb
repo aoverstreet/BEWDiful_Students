@@ -32,7 +32,6 @@ ActiveRecord::Schema.define(version: 20130819180632) do
     t.string   "state"
     t.string   "zipcode"
     t.string   "phone"
-    t.string   "pickup_time"
     t.string   "pickup_times"
   end
 
